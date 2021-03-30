@@ -40,4 +40,12 @@ while True:
         break
     print(record.UnitPrice)
 ````
+## Useful links to help debug PYODBC installation
+- For Linux:
+
+https://packages.microsoft.com/ubuntu/20.04/prod/pool/main/m/msodbcsql17/
+https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/m/msodbcsql17/
+- For Windows:
+
+https://docs.microsoft.com/en-gb/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver15
 # <u>SQL TASKS</u>

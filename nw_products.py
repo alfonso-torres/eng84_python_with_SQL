@@ -4,10 +4,10 @@ class Products:
 
     def __init__(self):
         # Let's establish the connection using PYODBC
-        server = "18.135.103.95"
-        database = "Northwind"
-        username = "SA"
-        password = "Passw0rd2018"
+        server = "xxxxxxx"
+        database = "xxxxxx"
+        username = "xxxxx"
+        password = "xxxxxxxxxx"
         docker_Northwind = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER=' + server + ';DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
         self.__cursor = docker_Northwind.cursor()
         # self.__cursor.execute("SELECT @@version;")

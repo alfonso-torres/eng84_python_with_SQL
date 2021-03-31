@@ -35,3 +35,7 @@ while True:
         break
     print(record.UnitPrice)
 
+# To close the connection we use the keyword "close"
+cursor.close()
+docker_Northwind.close()
+

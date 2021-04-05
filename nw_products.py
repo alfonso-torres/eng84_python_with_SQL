@@ -35,3 +35,25 @@ class Products:
     # Function to close the connection
     def close_connection(self):
         self.__cursor.close()
+
+    # Function to count how many products there are for UnitsInStocks
+    def count_product(self, product_name):
+        row = self.__cursor().execute(f"SELECT UnitsInStock FROM jose_table WHERE ProductName = '{product_name}'").fetchone()
+        if row is None:
+            return "Sorry there is not units."
+        else:
+            row[0]
+
+    # Function to update stocks to a product
+    def update_product(self, product_name, count):
+        count_now = self.count_product(product_name)
+        count_total = count_now + count
+        self.__cursor.execute(f"UPDATE jose_table SET UnitsInStock={count_total} WHERE ProductName = '{product_name}'")
+
+    # Function to subtract units in a product
+    def subtract_product_stock(self, product_name, count):
+        self.add_product_stock(product_name, -count)
+
+    # Function to delete a product in the table
+    def delete_product(self, product_name):
+        self.__cursor.execute(f"DELETE FROM jose_table WHERE ProductName = '{product_name}'")
